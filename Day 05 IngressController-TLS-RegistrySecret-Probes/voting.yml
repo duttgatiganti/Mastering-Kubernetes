@@ -137,12 +137,11 @@ spec:
     spec:
       containers:
       - name: result
-        image: kiran2361993/votingapp:results
+        image: dutt1/worker:v1
         ports:
         - containerPort: 80
           name: result
-      imagePullSecrets:
-      - name: docker-pwd
+    
 # vote
 ---
 apiVersion: v1
@@ -178,13 +177,12 @@ spec:
     spec:
       containers:
       - name: vote
-        image: kiran2361993/votingapp:vote
+        image: dutt1/vote:v1
         ports:
         - containerPort: 80
           name: vote
       imagePullSecrets:
       - name: docker-pwd
-
 # worker
 --- 
 apiVersion: v1
@@ -215,7 +213,6 @@ spec:
         app: worker
     spec: 
       containers: 
-      - image: kiran2361993/votingapp:worker
+      - image: dutt1/worker:v1
         name: worker
-      imagePullSecrets:
-      - name: docker-pwd
+  
