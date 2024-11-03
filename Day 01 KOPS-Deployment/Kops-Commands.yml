@@ -7,10 +7,10 @@ download Kops and Kubectl to usr/local/bin and change permissions.
 # Download Kubectl and give permissions.
 # edit .bashrc and add all the env variables 
 
-export NAME=cloudvishwakarma.in
-export KOPS_STATE_STORE=s3://cloudvishwakarma.in
-export AWS_REGION=us-east-1
-export CLUSTER_NAME=cloudvishwakarma.in
+export NAME=dutt1.shop
+export KOPS_STATE_STORE=s3://dutt1.shop
+export AWS_REGION=ap-south-1
+export CLUSTER_NAME=dutt1.shop
 export EDITOR='/usr/bin/nano'
 #export K8S_VERSION=1.6.4
 
