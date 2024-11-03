@@ -20,7 +20,7 @@ export EDITOR='/usr/bin/nano'
 
 kops create cluster --name=dutt1.shop \
 --state=s3://dutt1.shop --zones=ap-south-1a,ap-south-1b,ap-south-1c \
---node-count=3 --control-plane-count=3 --node-size=t3.medium --control-plane-size=t3.medium \
+--node-count=1 --control-plane-count=1 --node-size=t3.medium --control-plane-size=t3.medium \
 --control-plane-zones=ap-south-1a,ap-south-1b,ap-south-1c  --control-plane-volume-size 10 --node-volume-size 10 \
 --ssh-public-key ~/.ssh/id_ed25519.pub \
 --dns-zone=dutt1.shop --dry-run --output yaml
