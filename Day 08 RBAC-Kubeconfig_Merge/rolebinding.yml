@@ -5,7 +5,7 @@ metadata:
   namespace: development
 subjects:
 - kind: User
-  name: user1
+  name: u1
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
@@ -21,7 +21,7 @@ metadata:
   namespace: production
 subjects:
 - kind: User
-  name: user2
+  name: u2
   apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
