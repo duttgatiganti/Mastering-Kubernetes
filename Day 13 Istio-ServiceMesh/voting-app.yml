@@ -1,3 +1,4 @@
+
 # redis
 --- 
 apiVersion: v1
@@ -111,6 +112,7 @@ metadata:
   labels:
     app: result
 spec:
+  #type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
@@ -136,12 +138,11 @@ spec:
     spec:
       containers:
       - name: result
-        image: kiran2361993/testing:latestappresults
+        image: dutt1/worker:v1
         ports:
         - containerPort: 80
           name: result
-      imagePullSecrets:
-      - name: docker-pwd
+    
 # vote
 ---
 apiVersion: v1
@@ -151,6 +152,7 @@ metadata:
   labels:
     apps: vote
 spec:
+  #type: LoadBalancer
   ports:
     - port: 80
       targetPort: 80
@@ -176,13 +178,12 @@ spec:
     spec:
       containers:
       - name: vote
-        image: kiran2361993/testing:latestappvote
+        image: dutt1/vote:v1
         ports:
         - containerPort: 80
           name: vote
       imagePullSecrets:
       - name: docker-pwd
-
 # worker
 --- 
 apiVersion: v1
@@ -213,7 +214,6 @@ spec:
         app: worker
     spec: 
       containers: 
-      - image: kiran2361993/testing:latestappworker
+      - image: dutt1/worker:v1
         name: worker
-      imagePullSecrets:
-      - name: docker-pwd
+  
